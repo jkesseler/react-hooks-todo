@@ -1,0 +1,4 @@
+- Experimental React Todo app to check the [React hooks proposal](https://reactjs.org/docs/hooks-intro.html)
+- Bootstrapped with create-react-app
+- Uses react 16.7.0-alpha
+- Based on https://itnext.io/making-a-beautiful-todo-app-using-react-hooks-material-ui-52dacf3245f4
