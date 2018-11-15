@@ -12,6 +12,12 @@ class Settings {
     return requireEnvVar('REACT_APP_LOCAL_STORAGE_KEY', 'react-hooks-todo');
   }
 
+  getJSONBinApiUri() {
+    // BUG: only part of the key string is loaded in
+    return requireEnvVar('REACT_APP_JSONBIN_API_URI');
+  }
+
+
   getJSONBinAPIKey() {
     // BUG: only part of the key string is loaded in
     return requireEnvVar('REACT_APP_JSONBIN_API_KEY');
@@ -19,6 +25,10 @@ class Settings {
 
   getJSONBinName() {
     return requireEnvVar('REACT_APP_JSONBIN_NAME');
+  }
+
+  getJSONBinID() {
+    return requireEnvVar('REACT_APP_JSONBIN_ID');
   }
 }
 

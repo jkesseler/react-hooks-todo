@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { setRemote } from '../utils/remote-storage';
 
 export function usePersistedContext(context, key = 'state') {
   const persistedContext = localStorage.getItem(key);
@@ -7,5 +8,6 @@ export function usePersistedContext(context, key = 'state') {
 
 export function usePersistedReducer([state, dispatch], key = 'state') {
   useEffect(() => localStorage.setItem(key, JSON.stringify(state)), [state]);
+  useEffect(() => setRemote(JSON.stringify(state)), [state]);
   return [state, dispatch];
 }

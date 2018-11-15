@@ -1,4 +1,9 @@
 import { createContext } from 'react';
+import { getRemote } from './utils/remote-storage';
 
-const Store = createContext({ todos: [] });
+async function hydrateStore() {
+  return await getRemote();
+}
+
+const Store = createContext({ todos: hydrateStore() });
 export default Store;
