@@ -12,7 +12,7 @@ const TodoList = memo(() => {
 
   if (todos && todos.length > 0) {
     return (
-      <Paper style={{ margin: 16 }}>
+      <Paper>
         <List style={{ overflow: 'scroll' }}>
           {todos.map((todo, idx) => (
             <TodoListItem
