@@ -1,11 +1,12 @@
 /* eslint-disable react/no-array-index-key */
 import React, { memo, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { List, Paper } from '@material-ui/core';
 import TodoListItem from './TodoListItem';
 
 import Store from '../store';
 
-export const TodoList = memo(({ todos, toggleTodo, removeTodo }) => {
+export const TodoList = ({ todos, toggleTodo, removeTodo }) => {
   if (todos && todos.length > 0) {
     return (
       <Paper>
@@ -24,7 +25,20 @@ export const TodoList = memo(({ todos, toggleTodo, removeTodo }) => {
     );
   }
   return null;
-});
+};
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequried,
+  })),
+  toggleTodo: PropTypes.func.isRequired,
+  removeTodo: PropTypes.func.isRequired,
+};
+
+TodoList.defaultProps = {
+  todos: [],
+};
 
 
 export default (() => {
@@ -34,5 +48,5 @@ export default (() => {
   const toggleTodo = todo => dispatch({ type: 'CHECKED', payload: todo });
   const removeTodo = todo => dispatch({ type: 'REMOVE', payload: todo });
 
-  return (<TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />);
+  return memo(<TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />);
 });
