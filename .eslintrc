@@ -9,7 +9,9 @@
     "jest": true,
   },
   "rules": {
+    "complexity": ["warn", 10],
     "no-underscore-dangle": ["error"],
+    "max-depth": ["warn", 3],
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
   }
 }
