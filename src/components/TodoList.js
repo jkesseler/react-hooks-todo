@@ -41,12 +41,12 @@ TodoList.defaultProps = {
 };
 
 
-export default (() => {
+export default memo(() => {
   const { state, dispatch } = useContext(Store);
   const { todos } = state;
 
   const toggleTodo = todo => dispatch({ type: 'CHECKED', payload: todo });
   const removeTodo = todo => dispatch({ type: 'REMOVE', payload: todo });
 
-  return memo(<TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />);
+  return <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />;
 });
