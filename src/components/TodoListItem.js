@@ -10,11 +10,10 @@ import {
   ListItemText,
 } from '@material-ui/core';
 
-const TodoListItem = memo(({
+const TodoListItem = ({
   divider,
   text,
   checked,
-  id,
   onButtonClick,
   onCheckboxToggle,
 }) => (
@@ -34,7 +33,7 @@ const TodoListItem = memo(({
       </IconButton>
     </ListItemSecondaryAction>
   </ListItem>
-));
+);
 
 TodoListItem.propTypes = {
   divider: PropTypes.bool,
@@ -44,4 +43,9 @@ TodoListItem.propTypes = {
   onCheckboxToggle: PropTypes.func.isRequired,
 };
 
-export default TodoListItem;
+TodoListItem.defaultProps = {
+  divider: false,
+  checked: false,
+};
+
+export default memo(TodoListItem);

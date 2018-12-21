@@ -11,6 +11,9 @@
   "rules": {
     "complexity": ["warn", 10],
     "no-underscore-dangle": ["error"],
+    // This rule conflicts exporting connected components
+    // https://github.com/benmosher/eslint-plugin-import/issues/544#issuecomment-244976007
+    "import/no-named-as-default": ["off"],
     "max-depth": ["warn", 3],
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
   }

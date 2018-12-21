@@ -1,19 +1,25 @@
-import React, {
-  memo, useContext, useReducer,
-} from 'react';
+import React, { useContext, useReducer } from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Store from '../store';
 import reducer from '../reducer';
 
-import {
-  usePersistedContext, usePersistedReducer,
-} from '../hooks';
+import { usePersistedContext, usePersistedReducer } from '../hooks';
 
 import Layout from './Layout';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 
-const TodoApp = memo(() => {
+export const TodoApp = () => (
+  <CssBaseline>
+    <Layout>
+      <AddTodo />
+      <TodoList />
+    </Layout>
+  </CssBaseline>
+);
+
+export default (() => {
   const globalStore = usePersistedContext(useContext(Store), 'state');
 
   const [state, dispatch] = usePersistedReducer(
@@ -21,15 +27,9 @@ const TodoApp = memo(() => {
     'state',
   );
 
-
   return (
     <Store.Provider value={{ state, dispatch }}>
-      <Layout>
-        <AddTodo />
-        <TodoList />
-      </Layout>
+      <TodoApp />
     </Store.Provider>
   );
 });
-
-export default TodoApp;

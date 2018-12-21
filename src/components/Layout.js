@@ -5,7 +5,7 @@ import {
   AppBar, Paper, Toolbar, Typography,
 } from '@material-ui/core';
 
-const Layout = memo(({ children }) => (
+const Layout = ({ children }) => (
   <Paper
     elevation={0}
     style={{
@@ -21,7 +21,7 @@ const Layout = memo(({ children }) => (
     </AppBar>
     { children }
   </Paper>
-));
+);
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([
@@ -30,4 +30,4 @@ Layout.propTypes = {
   ]).isRequired,
 };
 
-export default Layout;
+export default memo(Layout);

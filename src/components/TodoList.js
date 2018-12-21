@@ -5,11 +5,7 @@ import TodoListItem from './TodoListItem';
 
 import Store from '../store';
 
-
-const TodoList = memo(() => {
-  const { state, dispatch } = useContext(Store);
-  const { todos } = state;
-
+export const TodoList = memo(({ todos, toggleTodo, removeTodo }) => {
   if (todos && todos.length > 0) {
     return (
       <Paper>
@@ -19,8 +15,8 @@ const TodoList = memo(() => {
               {...todo}
               key={idx}
               divider={idx !== todo.length - 1}
-              onButtonClick={() => dispatch({ type: 'REMOVE', payload: todo })}
-              onCheckboxToggle={() => dispatch({ type: 'CHECKED', payload: todo })}
+              onButtonClick={() => removeTodo(todo)}
+              onCheckboxToggle={() => toggleTodo(todo)}
             />
           ))}
         </List>
@@ -30,4 +26,13 @@ const TodoList = memo(() => {
   return null;
 });
 
-export default TodoList;
+
+export default (() => {
+  const { state, dispatch } = useContext(Store);
+  const { todos } = state;
+
+  const toggleTodo = todo => dispatch({ type: 'CHECKED', payload: todo });
+  const removeTodo = todo => dispatch({ type: 'REMOVE', payload: todo });
+
+  return (<TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />);
+});
