@@ -1,3 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TodoApp renders without crashing 1`] = `null`;
+exports[`TodoApp renders without crashing 1`] = `
+<WithStyles(CssBaseline)>
+  <Memo(Layout)>
+    <Memo() />
+    <Memo() />
+  </Memo(Layout)>
+</WithStyles(CssBaseline)>
+`;

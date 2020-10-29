@@ -30,7 +30,7 @@ export const AddTodo = ({
           variant="outlined"
           onClick={handleTodoAdd}
         >
-            Add
+          Add
         </Button>
       </Grid>
     </Grid>

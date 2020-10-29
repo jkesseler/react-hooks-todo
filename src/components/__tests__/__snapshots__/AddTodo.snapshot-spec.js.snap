@@ -1,3 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddTodo renders without crashing 1`] = `null`;
+exports[`AddTodo renders without crashing 1`] = `
+<AddTodo
+  handleInputChange={[Function]}
+  handleKeyPress={[Function]}
+  handleTodoAdd={[Function]}
+  todo=""
+/>
+`;

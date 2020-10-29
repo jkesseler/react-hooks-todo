@@ -6,7 +6,7 @@ import TodoListItem from './TodoListItem';
 
 import Store from '../store';
 
-export const TodoList = ({ todos, toggleTodo, removeTodo }) => {
+export const TodoList = ({ todos = [], toggleTodo, removeTodo }) => {
   if (todos && todos.length > 0) {
     return (
       <Paper>

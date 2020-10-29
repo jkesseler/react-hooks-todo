@@ -1,3 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout renders without crashing 1`] = `null`;
+exports[`Layout renders without crashing 1`] = `
+<WithStyles(ForwardRef(Paper))
+  elevation={0}
+  style={
+    Object {
+      "backgroundColor": "#fafafa",
+      "margin": 0,
+      "padding": 0,
+    }
+  }
+>
+  <WithStyles(ForwardRef(AppBar))
+    color="primary"
+    position="static"
+    style={
+      Object {
+        "height": 64,
+      }
+    }
+  >
+    <WithStyles(ForwardRef(Toolbar))
+      style={
+        Object {
+          "height": 60,
+        }
+      }
+    >
+      <WithStyles(ForwardRef(Typography))
+        color="inherit"
+      >
+        Todo App
+      </WithStyles(ForwardRef(Typography))>
+    </WithStyles(ForwardRef(Toolbar))>
+  </WithStyles(ForwardRef(AppBar))>
+</WithStyles(ForwardRef(Paper))>
+`;

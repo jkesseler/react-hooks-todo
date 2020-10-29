@@ -1,3 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TodoListItem renders without crashing 1`] = `null`;
+exports[`TodoListItem renders without crashing 1`] = `
+<WithStyles(ForwardRef(ListItem))
+  divider={false}
+>
+  <WithStyles(ForwardRef(Checkbox))
+    checked={false}
+    disableRipple={true}
+  />
+  <WithStyles(ForwardRef(ListItemText)) />
+  <WithStyles(ForwardRef(ListItemSecondaryAction))>
+    <WithStyles(ForwardRef(IconButton))
+      aria-label="Delete todo"
+    >
+      <DeleteOutlinedIcon />
+    </WithStyles(ForwardRef(IconButton))>
+  </WithStyles(ForwardRef(ListItemSecondaryAction))>
+</WithStyles(ForwardRef(ListItem))>
+`;

@@ -1,21 +1,29 @@
 {
-  "extends": ["airbnb", "react-app"],
+  "extends": [
+    "airbnb",
+    "react-app",
+    "plugin:import/errors"
+  ],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 8
   },
   "env": {
     "browser": true,
-    "jest": true,
+    "jest": true
   },
   "rules": {
     "complexity": ["warn", 10],
+    "max-depth": ["warn", 3],
     "no-underscore-dangle": ["error"],
     // This rule conflicts exporting connected components
     // https://github.com/benmosher/eslint-plugin-import/issues/544#issuecomment-244976007
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["*/setupTests.js", "**/__tests__/*"]}],
     "import/no-named-as-default": ["off"],
-    "max-depth": ["warn", 3],
+    "import/no-unresolved": ["error"],
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
-    "react/prop-types": ["error", { customValidators: ["skipUndeclared"] } ]
+    "react/prop-types": ["error", { "customValidators": ["skipUndeclared"] } ]
   }
 }

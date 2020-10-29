@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TodoList renders without crashing 1`] = `null`;
+exports[`TodoList renders without crashing 1`] = `
+<WithStyles(ForwardRef(Paper))>
+  <WithStyles(ForwardRef(List))
+    style={
+      Object {
+        "overflow": "scroll",
+      }
+    }
+  >
+    <Memo(TodoListItem)
+      divider={true}
+      id="00000000-0000-0000-0000-000000000000"
+      key="0"
+      onButtonClick={[Function]}
+      onCheckboxToggle={[Function]}
+      text="test"
+    />
+  </WithStyles(ForwardRef(List))>
+</WithStyles(ForwardRef(Paper))>
+`;
